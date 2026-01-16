@@ -8,10 +8,10 @@ ORDER BY p.apellido1, p.apellido2, p.nombre ASC;
 SELECT p.nombre, p.apellido1, p.apellido2
 FROM persona p
 WHERE p.tipo = 'alumno' AND p.telefono IS NULL
-ORDER BY p.nombre, p.apellido1, p.apellido2 ASC;
+ORDER BY p.nombre DESC, p.apellido1 DESC, p.apellido2 DESC;
 
 -- 3. Retorna el llistat dels alumnes que van néixer en 1999. (id, nombre, apellido1, apellido2, fecha_nacimiento)
-SELECT p.nif as id, p.nombre, p.apellido1, p.apellido2, p.fecha_nacimiento
+SELECT p.id as id, p.nombre, p.apellido1, p.apellido2, p.fecha_nacimiento
 FROM persona p
 WHERE YEAR(p.fecha_nacimiento) = 1999 AND p.tipo = 'alumno';
 
@@ -28,7 +28,7 @@ FROM asignatura a
 WHERE a.cuatrimestre = 1 AND a.curso = 3 AND a.id_grado = 7;
 
 -- 6. Retorna un llistat dels professors/es juntament amb el nom del departament al qual estan vinculats. El llistat ha de retornar quatre columnes, primer cognom, segon cognom, nom i nom del departament. El resultat estarà ordenat alfabèticament de menor a major pels cognoms i el nom. (apellido1, apellido2, nombre, departamento)
-SELECT p.apellido1, p.apellido2, p.nombre, d.nombre as departmento
+SELECT p.apellido1, p.apellido2, p.nombre, d.nombre as departamento
 FROM persona p JOIN profesor pr ON p.id = pr.id_profesor JOIN departamento d ON pr.id_departamento = d.id
 ORDER BY p.apellido1, p.apellido2, p.nombre ASC;
 
@@ -40,7 +40,7 @@ FROM persona p JOIN alumno_se_matricula_asignatura asma ON p.id = asma.id_alumno
 WHERE p.nif LIKE '26902806M';
 
 -- 8. Retorna un llistat amb el nom de tots els departaments que tenen professors/es que imparteixen alguna assignatura en el Grau en Enginyeria Informàtica (Pla 2015). (nombre)
-SELECT d.nombre
+SELECT DISTINCT d.nombre
 FROM departamento d JOIN profesor p ON d.id = p.id_departamento
 WHERE EXISTS(SELECT a.id_profesor
              FROM grado g JOIN asignatura a ON g.id = a.id_grado
@@ -55,7 +55,7 @@ WHERE ce.anyo_inicio = 2018;
 
 -- Resol les 6 següents consultes utilitzant les clàusules LEFT JOIN i RIGHT JOIN.
 -- 10. Retorna un llistat amb els noms de tots els professors/es i els departaments que tenen vinculats. El llistat també ha de mostrar aquells professors/es que no tenen cap departament associat. El llistat ha de retornar quatre columnes, nom del departament, primer cognom, segon cognom i nom del professor/a. El resultat estarà ordenat alfabèticament de menor a major pel nom del departament, cognoms i el nom. (departamento, apellido1, apellido2, nombre)
-SELECT d.nombre as departmento, p.apellido1, p.apellido2, p.nombre
+SELECT d.nombre as departamento, p.apellido1, p.apellido2, p.nombre
 FROM persona p LEFT JOIN profesor prof ON p.id = prof.id_profesor
                LEFT JOIN departamento d ON prof.id_departamento = d.id
 WHERE p.tipo = 'profesor';
