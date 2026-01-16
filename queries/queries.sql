@@ -103,7 +103,7 @@ GROUP BY d.nombre
 ORDER BY total DESC;
 
 -- 19. Retorna un llistat amb tots els departaments i el nombre de professors/es que hi ha en cadascun d'ells. Tingui en compte que poden existir departaments que no tenen professors/es associats. Aquests departaments també han d'aparèixer en el llistat. (departamento, total)
-SELECT d.nombre as departmento, COUNT(p.id_profesor) as total
+SELECT d.nombre as departamento, COUNT(p.id_profesor) as total
 FROM departamento d LEFT JOIN profesor p ON d.id = p.id_departamento
 GROUP BY d.nombre
 ORDER BY total DESC;
@@ -111,18 +111,18 @@ ORDER BY total DESC;
 -- 20. Retorna un llistat amb el nom de tots els graus existents en la base de dades i el nombre d'assignatures que té cadascun. Tingues en compte que poden existir graus que no tenen assignatures associades. Aquests graus també han d'aparèixer en el llistat. El resultat haurà d'estar ordenat de major a menor pel nombre d'assignatures. (grau, total)
 SELECT g.nombre as grau, count(a.id) as total
 FROM grado g LEFT JOIN asignatura a ON g.id = a.id_grado
-GROUP BY degree_name
+GROUP BY grau
 ORDER BY total DESC;
 
 -- 21. Retorna un llistat amb el nom de tots els graus existents en la base de dades i el nombre d'assignatures que té cadascun, dels graus que tinguin més de 40 assignatures associades. (grau, total)
 SELECT g.nombre as grau, count(a.id) as total
 FROM grado g LEFT JOIN asignatura a ON g.id = a.id_grado
-GROUP BY degree_name
+GROUP BY grau
 HAVING subject_count >= 40
 ORDER BY total DESC;
 
 -- 22. Retorna un llistat que mostri el nom dels graus i la suma del nombre total de crèdits que hi ha per a cada tipus d'assignatura. El resultat ha de tenir tres columnes: nom del grau, tipus d'assignatura i la suma dels crèdits de totes les assignatures que hi ha d'aquest tipus. (grau, tipus, total_creditos)
-SELECT g.nombre as grau, a.tipo as tipo, count(a.creditos) as total_creditos
+SELECT g.nombre as grau, a.tipo as tipo, sum(a.creditos) as total_creditos
 FROM grado g JOIN asignatura a ON g.id = a.id_grado
 GROUP BY grau, tipo;
 
