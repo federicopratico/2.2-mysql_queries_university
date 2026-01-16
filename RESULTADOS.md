@@ -2,39 +2,11 @@
 
 
 ## 📈 Resumen
-✅ 12 correctas de 26 queries
+✅ 13 correctas de 26 queries
 
-## ❌ Query 1: Incorrecto
-```diff
---- 
-+++ 
-@@ -1,13 +1,13 @@
- apellido1 | apellido2 | nombre
- Domínguez | Guerrero | Antonio
-+Herman | Pacocha | Daniel
-+Lakin | Yundt | Inma
-+Hernández | Martínez | Irene
-+Strosin | Turcotte | Ismael
-+Koss | Bayer | José
-+Gutiérrez | López | Juan
-+Saez | Vega | Juan
-+Heller | Pagac | Pedro
-+Herzog | Tremblay | Ramón
-+Sánchez | Pérez | Salvador
- Gea | Ruiz | Sonia
--Gutiérrez | López | Juan
--Heller | Pagac | Pedro
--Herman | Pacocha | Daniel
--Hernández | Martínez | Irene
--Herzog | Tremblay | Ramón
--Koss | Bayer | José
--Lakin | Yundt | Inma
--Saez | Vega | Juan
--Sánchez | Pérez | Salvador
--Strosin | Turcotte | Ismael
-```
+## ✅ Query 1: Correcto
 
-⏱ Tiempo: 0.40 ms
+⏱ Tiempo: 0.42 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
@@ -50,7 +22,7 @@
 -Ismael | Strosin | Turcotte
 ```
 
-⏱ Tiempo: 0.37 ms
+⏱ Tiempo: 0.34 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
@@ -67,21 +39,21 @@
 +41491230N | Antonio | Domínguez | Guerrero | 1999-02-11
 ```
 
-⏱ Tiempo: 0.35 ms
+⏱ Tiempo: 0.30 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 4: Correcto
 
-⏱ Tiempo: 0.35 ms
+⏱ Tiempo: 0.30 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 5: Correcto
 
-⏱ Tiempo: 0.38 ms
+⏱ Tiempo: 0.32 ms
 ✅ Se usó índice(s) en la consulta: id_grado
 
 ---
@@ -98,15 +70,15 @@
  Kohler | Schoen | Alejandro | Matemáticas
 ```
 
-⏱ Tiempo: 0.43 ms
+⏱ Tiempo: 0.42 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY,id_departamento, PRIMARY
 
 ---
 
 ## ✅ Query 7: Correcto
 
-⏱ Tiempo: 0.55 ms
-✅ Se usó índice(s) en la consulta: PRIMARY, PRIMARY,id_asignatura,id_curso_escolar, PRIMARY,nif
+⏱ Tiempo: 0.51 ms
+✅ Se usó índice(s) en la consulta: PRIMARY,id_asignatura,id_curso_escolar, PRIMARY,nif, PRIMARY
 
 ---
 
@@ -120,15 +92,15 @@
 +Informática
 ```
 
-⏱ Tiempo: 0.47 ms
-✅ Se usó índice(s) en la consulta: PRIMARY,id_departamento, id_profesor,id_grado, PRIMARY
+⏱ Tiempo: 0.46 ms
+✅ Se usó índice(s) en la consulta: id_profesor,id_grado, PRIMARY,id_departamento, PRIMARY
 
 ---
 
 ## ✅ Query 9: Correcto
 
-⏱ Tiempo: 0.40 ms
-✅ Se usó índice(s) en la consulta: PRIMARY, PRIMARY,id_curso_escolar
+⏱ Tiempo: 0.35 ms
+✅ Se usó índice(s) en la consulta: PRIMARY,id_curso_escolar, PRIMARY
 
 ---
 
@@ -159,21 +131,21 @@
 -Química y Física | Stiedemann | Morissette | Alfredo
 ```
 
-⏱ Tiempo: 0.44 ms
+⏱ Tiempo: 0.38 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY
 
 ---
 
 ## ✅ Query 11: Correcto
 
-⏱ Tiempo: 0.39 ms
+⏱ Tiempo: 0.34 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY
 
 ---
 
 ## ✅ Query 12: Correcto
 
-⏱ Tiempo: 0.35 ms
+⏱ Tiempo: 0.30 ms
 ✅ Se usó índice(s) en la consulta: id_departamento
 
 ---
@@ -199,14 +171,14 @@
  Schowalter | Muller | Francesca
 ```
 
-⏱ Tiempo: 0.36 ms
+⏱ Tiempo: 0.31 ms
 ✅ Se usó índice(s) en la consulta: id_profesor
 
 ---
 
 ## ✅ Query 14: Correcto
 
-⏱ Tiempo: 0.35 ms
+⏱ Tiempo: 0.31 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY
 
 ---
@@ -223,21 +195,21 @@
  Educación
 ```
 
-⏱ Tiempo: 0.37 ms
+⏱ Tiempo: 0.32 ms
 ✅ Se usó índice(s) en la consulta: id_profesor, id_departamento
 
 ---
 
 ## ✅ Query 16: Correcto
 
-⏱ Tiempo: 0.34 ms
+⏱ Tiempo: 0.31 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 17: Correcto
 
-⏱ Tiempo: 0.33 ms
+⏱ Tiempo: 0.29 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
@@ -264,8 +236,8 @@
 
 ## ✅ Query 23: Correcto
 
-⏱ Tiempo: 0.37 ms
-✅ Se usó índice(s) en la consulta: PRIMARY, id_curso_escolar
+⏱ Tiempo: 0.34 ms
+✅ Se usó índice(s) en la consulta: id_curso_escolar, PRIMARY
 
 ---
 
@@ -275,7 +247,7 @@
 
 ## ✅ Query 25: Correcto
 
-⏱ Tiempo: 0.37 ms
+⏱ Tiempo: 0.33 ms
 🔍 No se usó ningún índice en esta consulta.
 
 🚨 **Problemas detectados:**
@@ -285,7 +257,7 @@
 
 ## ✅ Query 26: Correcto
 
-⏱ Tiempo: 0.36 ms
+⏱ Tiempo: 0.32 ms
 ✅ Se usó índice(s) en la consulta: id_profesor, PRIMARY
 
 ---
